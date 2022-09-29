@@ -1,0 +1,11 @@
+{
+  "name": "day10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.go",
+  "scripts": {
+    "serve": "nodemon --exec go run main.go"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS Online -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icon Online/CDN -->
+    <script src="https://use.fontawesome.com/2d5150cd92.js"></script>
+    <script src="https://kit.fontawesome.com/0984795895.js" crossorigin="anonymous"></script>
+
+    <!-- css external -->
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title> Add Project </title>
+</head>
+
+<body>
+    <div id="add-project">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg bg-light sticky-top">
+            <div class="container">
+                <img src="/public/image/logo.png" alt="Logo">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-3">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="form-project">Add Project</a>
+                        </li>
+                    </ul>
+                    <a href="/contact" class="btn btn-orange">Contact Me</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container main-addproject d-flex justify-content-center">
+            <form action="/edit-project/{{ .Edits.ID }}" method="POST" class="w-50 p-4">
+                <h2 class="text-center fw-bold mb-4">Edit MY PROJECT</h2>
+                <div class="form-group">
+                    <label for="projectName" class="form-label fw-bold"> Project Name </label>
+                    <input type="text" name="projectName" id="projectName" class="form-control"
+                        value="{{ .Edits.ProjectName }}">
+                </div>
+                <div class="form-group mt-3 d-lg-flex gap-4 ">
+                    <div class="start-date w-100">
+                        <label for="startDate" class="form-label fw-bold"> Start Date </label>
+                        <input type="date" name="startDate" id="startDate" class="form-control"
+                            value="{{ .Edits.Format_startdate }}">
+                    </div>
+                    <div class="end-date w-100">
+                        <label for="endDate" class="form-label fw-bold"> End Date </label>
+                        <input type="date" name="endDate" id="endDate" class="form-control"
+                            value="{{ .Edits.Format_enddate }}">
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="description" class="form-label fw-bold">Description</label>
+                    <textarea name="description" id=" description" cols="30" rows="5"
+                        class="form-control">{{ .Edits.Description }}</textarea>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="" class="form-label fw-bold">Technologies</label>
+                    <div class="technologies d-md-flex flex-wrap">
+                        <div class="node-js me-4">
+                            <input type="checkbox" name="nodeJs" id="nodeJs"> Node JS
+                        </div>
+                        <div class="next-js me-4">
+                            <input type="checkbox" name="nextJs" id="nextJs"> Next JS
+                        </div>
+                        <div class="react-js me-4">
+                            <input type="checkbox" name="reactJs" id="reactJs"> React JS
+                        </div>
+                        <div class="vue-js">
+                            <input type="checkbox" name="vueJs" id="vueJs"> Vue JS
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="image" class="form-label fw-bold"> Uplode Image </label>
+                    <input type="file" name="image" id="image" class="form-control" placeholder="">
+                </div>
+                <div class="form-group mt-4 d-grid gap-4 d-lg-flex justify-content-lg-end">
+                    <button class="btn btn-dark float-end w-100">Submit</button>
+                    <a href="/" class="btn btn-danger text-white w-100">Back</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

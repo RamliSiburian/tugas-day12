@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS Online -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icon Online/CDN -->
+    <script src="https://use.fontawesome.com/2d5150cd92.js"></script>
+    <script src="https://kit.fontawesome.com/0984795895.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title> Detail Project </title>
+</head>
+
+<body>
+    <div id="detail-project">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg bg-light sticky-top">
+            <div class="container">
+                <img src="/public/image/logo.png" alt="Logo">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-3">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/form-project">Add Project</a>
+                        </li>
+                    </ul>
+                    <a href="/contact" class="btn btn-orange">Contact Me</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-detailProject">
+            <section>
+                <div class="container detail-project">
+                    <h1 class="pt-5 text-center fw-bold fs-1">{{ .Project.ProjectName }}</h1>
+                    <div class="detail-head d-flex mt-5">
+                        <div class="left-head">
+                            <img class="card" src="/public/image/kucing.jpg" alt="">
+                        </div>
+                        <div class="right-head">
+                            <div class="duration">
+                                <h4 class="fw-bold fs-3">Duration</h4>
+                                <p>Authors : {{ .Project.Author }}</p>
+                                <i class="fa-solid fa-calendar-days me-2"> </i> {{ .Project.Format_startdate }} &nbsp;
+                                s/d
+                                &nbsp;
+                                {{ .Project.Format_enddate }}
+                                <br>
+                                <i class="fa-regular fa-clock mt-2 me-2"> </i> {{ .Project.Duration }}
+                            </div>
+
+                            <div class="technologies d-flex flex-wrap mt-5">
+                                <i class='fa-brands fa-node fa-xl me-4'></i>
+                                <i class='fa-brands fa-react fa-xl me-4'></i>
+                                <i class='fa-brands fa-vuejs fa-xl me-4'></i>
+                                <i class='fa-brands fa-js fa-xl'></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-content mt-4">
+                        {{ .Project.Description }}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
